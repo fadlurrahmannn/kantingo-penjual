@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Home, UtensilsCrossed, ClipboardList, BarChart3, User, Store, Plus, Bell } from "lucide-react";
-import Profil from "./profil";
+import Profil from "./Profil";
 
 const BLUE = "bg-[#1428C8]";
 const YELLOW = "bg-[#EEFF5A]";
