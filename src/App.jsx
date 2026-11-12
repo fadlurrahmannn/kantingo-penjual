@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Home, UtensilsCrossed, ClipboardList, BarChart3, User, Store, Plus, Bell } from "lucide-react";
+import Profil from "./Profil";
 
 const BLUE = "bg-[#1428C8]";
 const YELLOW = "bg-[#EEFF5A]";
@@ -208,21 +209,10 @@ export default function App() {
       )}
 
       {tab === "profil" && (
-        <Page label="Akun Mitra" title="Profil Warung">
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            <Card className="md:col-span-2 flex items-center gap-4">
-              <div className={`${BLUE} w-16 h-16 rounded-2xl grid place-items-center text-white`}><Store /></div>
-              <div>
-                <p className="font-extrabold">Kedai Kopi Kampus 2.0</p>
-                <p className="text-xs text-gray-500">Kantin Pusat, Sayap Barat</p>
-                <p className="text-xs text-gray-500">Jam buka 07:30 - 19:00</p>
-              </div>
-            </Card>
-            <Card className="flex items-center justify-between"><p className="font-semibold text-sm">Rating</p><p className="font-extrabold">⭐ 4.8 (6 ulasan)</p></Card>
-          </div>
-          <button className="w-full md:w-auto md:px-10 py-3 rounded-full bg-white text-red-500 font-bold shadow">Keluar</button>
-        </Page>
-      )}
+  <Page label="Akun Mitra" title="Profil Warung">
+    <Profil selesai={selesai.length} setTab={setTab} />
+  </Page>
+)}
 
       {/* Bottom nav (HP) */}
       <nav className={`${BLUE} md:hidden fixed bottom-0 left-0 w-full rounded-t-[2rem] px-4 pt-4 pb-6 flex justify-around items-end z-30`}>
