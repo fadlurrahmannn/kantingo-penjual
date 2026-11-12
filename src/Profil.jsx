@@ -86,9 +86,9 @@ export default function Profil({ selesai, setTab }) {
   };
 
   return (
-    <div className="grid md:grid-cols-3 gap-4 md:gap-6 items-start">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
       {/* Kolom kiri */}
-      <div className="space-y-4 md:space-y-6 md:sticky md:top-24">
+      <div className="space-y-4 md:space-y-6 md:sticky md:top-24 min-w-0">
         <Card className="p-5 flex items-center gap-4">
           <div className={`${BLUE} w-16 h-16 rounded-2xl grid place-items-center text-white shrink-0`}><Store /></div>
           <div className="min-w-0 flex-1">
@@ -113,7 +113,7 @@ export default function Profil({ selesai, setTab }) {
       </div>
 
       {/* Kolom kanan */}
-      <div className="md:col-span-2 space-y-4 md:space-y-6">
+      <div className="md:col-span-2 space-y-4 md:space-y-6 min-w-0">
         <Section title="AKUN">
           <Row icon={Pencil} title="Edit Profil Warung" desc="Nama warung, username, email & nomor HP" onClick={() => openModal("edit", profile)} />
           <Row icon={Lock} title="Ubah Kata Sandi" desc="Perbarui kata sandi akun untuk keamanan" onClick={() => openModal("pass", { lama: "", baru: "", ulang: "" })} />

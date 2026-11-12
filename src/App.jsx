@@ -103,7 +103,7 @@ export default function App() {
       {tab === "beranda" && (
         <Page label="Dashboard Penjual" title="Kedai Kopi Kampus 2.0"
           right={<button className="w-10 h-10 rounded-full bg-white/20 grid place-items-center"><Bell size={18} /></button>}>
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <Card className="flex items-center justify-between">
               <div>
                 <p className="font-bold">Status Warung</p>
@@ -116,7 +116,7 @@ export default function App() {
             <Card><p className="text-xs text-gray-400 font-semibold">PESANAN BARU</p><p className="text-3xl font-extrabold mt-1">{count("baru")}</p></Card>
             <Card><p className="text-xs text-gray-400 font-semibold">DIPROSES</p><p className="text-3xl font-extrabold mt-1">{count("diproses")}</p></Card>
           </div>
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <Card className="md:col-span-2">
               <p className="text-xs text-gray-400 font-semibold">OMZET HARI INI</p>
               <p className="text-3xl md:text-4xl font-extrabold text-[#1428C8] mt-1">{rp(omzet)}</p>
@@ -140,7 +140,7 @@ export default function App() {
           {orders.filter((o) => o.status === filter).length === 0 && (
             <Card className="text-center text-gray-400 text-sm">Belum ada pesanan di sini.</Card>
           )}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {orders.filter((o) => o.status === filter).map((o) => (
               <Card key={o.id} className="space-y-3">
                 <div className="flex justify-between items-start">
@@ -166,14 +166,14 @@ export default function App() {
 
       {tab === "menu" && (
         <Page label="Kelola Dagangan" title="Menu Saya">
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
             <Card className="space-y-3 md:sticky md:top-24">
               <p className="font-bold">Tambah Menu Baru</p>
               <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Nama menu" className={input} />
               <input value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} placeholder="Harga (contoh: 12000)" type="number" className={input} />
               <button onClick={addMenu} className={`${BLUE} text-white w-full py-3 rounded-full font-bold flex items-center justify-center gap-2`}><Plus size={16} /> Tambah</button>
             </Card>
-            <div className="md:col-span-2 grid sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {menu.map((m) => (
                 <Card key={m.id} className="flex items-center justify-between gap-3">
                   <div>
@@ -197,7 +197,7 @@ export default function App() {
             <p className="text-xs text-gray-400 font-semibold">TOTAL PENDAPATAN</p>
             <p className="text-3xl md:text-4xl font-extrabold text-[#1428C8]">{rp(omzet)}</p>
           </Card>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {selesai.map((o) => (
               <Card key={o.id} className="flex justify-between items-center gap-3">
                 <div><p className="font-bold text-sm">{o.id}</p><p className="text-xs text-gray-400">{o.items}</p></div>
