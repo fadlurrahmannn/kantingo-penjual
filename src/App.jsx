@@ -76,7 +76,7 @@ export default function App() {
   const input = "w-full bg-[#eef1ff] rounded-2xl px-4 py-3 text-sm outline-none";
 
   return (
-    <div className="min-h-screen pb-32 md:pb-0">
+    <div className="min-h-screen pb-32 md:pb-0 overflow-x-hidden">
       {/* Navbar atas (desktop) */}
       <header className={`${BLUE} hidden md:block sticky top-0 z-20`}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">

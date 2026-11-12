@@ -19,7 +19,7 @@ const Section = ({ title, children }) => (
 );
 
 const Row = ({ icon: Icon, title, desc, onClick, right, badge }) => (
-  <button onClick={onClick} className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-[#f6f8ff] transition">
+  <button onClick={onClick} className="w-full min-w-0 flex items-center gap-4 px-5 py-4 text-left hover:bg-[#f6f8ff] transition">
     <div className="w-10 h-10 rounded-2xl bg-[#eef1ff] grid place-items-center text-[#1428C8] shrink-0"><Icon size={18} /></div>
     <div className="flex-1 min-w-0">
       <p className="font-bold text-sm flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function Profil({ selesai, setTab }) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
+    <div className="grid grid-cols-[minmax(0,1fr)] md:grid-cols-3 gap-4 md:gap-6 items-start w-full overflow-hidden md:overflow-visible">
       {/* Kolom kiri */}
       <div className="space-y-4 md:space-y-6 md:sticky md:top-24 min-w-0">
         <Card className="p-5 flex items-center gap-4">
@@ -106,7 +106,7 @@ export default function Profil({ selesai, setTab }) {
           </Card>
           <Card className="p-4">
             <p className="text-[10px] font-bold text-gray-400">SELESAI</p>
-            <p className="text-2xl font-extrabold mt-1">{selesai} Pesanan</p>
+            <p className="text-xl md:text-2xl font-extrabold mt-1">{selesai} Pesanan</p>
             <button onClick={() => setTab("laporan")} className="text-xs font-bold text-[#1428C8]">Lihat laporan →</button>
           </Card>
         </div>
