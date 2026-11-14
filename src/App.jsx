@@ -158,18 +158,18 @@ export default function App() {
                 <div className={`w-6 h-6 bg-white rounded-full transition ${open ? "translate-x-6" : ""}`} />
               </button>
             </Card>
-            <Card><p className="text-xs text-gray-400 font-semibold">PESANAN BARU</p><p className="text-3xl font-extrabold mt-1">{count("baru")}</p></Card>
-            <Card><p className="text-xs text-gray-400 font-semibold">DIPROSES</p><p className="text-3xl font-extrabold mt-1">{count("diproses")}</p></Card>
+            <Card><p className="text-xs text-gray-400 font-semibold">PESANAN BARU</p><p className="text-xl md:text-3xl font-extrabold mt-1">{count("baru")}</p></Card>
+            <Card><p className="text-xs text-gray-400 font-semibold">DIPROSES</p><p className="text-xl md:text-3xl font-extrabold mt-1">{count("diproses")}</p></Card>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <Card>
               <p className="text-xs text-gray-400 font-semibold">OMZET HARI INI</p>
-              <p className="text-3xl font-extrabold text-[#1428C8] mt-1">{rp(omzetHariIni)}</p>
+              <p className="text-xl md:text-3xl font-extrabold text-[#1428C8] mt-1">{rp(omzetHariIni)}</p>
               <p className="text-xs text-gray-400 mt-1">{selesai.filter((o) => o.day === 0).length} pesanan selesai</p>
             </Card>
             <Card>
               <p className="text-xs text-gray-400 font-semibold">SALDO DAPAT DITARIK</p>
-              <p className="text-3xl font-extrabold text-[#1428C8] mt-1">{rp(saldo)}</p>
+              <p className="text-xl md:text-3xl font-extrabold text-[#1428C8] mt-1">{rp(saldo)}</p>
               <button onClick={() => setTab("laporan")} className="text-xs font-bold text-[#1428C8] mt-1">Tarik saldo →</button>
             </Card>
             <button onClick={() => setTab("pesanan")} className={`${BLUE} text-white w-full py-4 rounded-3xl font-bold shadow-lg`}>Lihat Pesanan Masuk →</button>
@@ -282,18 +282,20 @@ export default function App() {
       <Struk order={orders.find((o) => o.id === detailId)} warung={profile.name} onClose={() => setDetailId(null)} onStatus={setStatus} />
 
       {/* Bottom nav (HP) */}
-      <nav className={`${BLUE} md:hidden fixed bottom-0 left-0 w-full rounded-t-[2rem] px-4 pt-4 pb-6 flex justify-around items-end z-30`}>
+      <nav className={`${BLUE} md:hidden fixed bottom-0 left-0 w-full h-[92px] rounded-t-[2rem] flex justify-around items-start pt-[30px] z-30`}>
         {nav.map(({ k, l, i: Icon, center }) =>
           center ? (
-            <button key={k} onClick={() => setTab(k)} className="relative -mt-12 flex flex-col items-center">
-              <div className={`${YELLOW} w-16 h-16 rounded-full grid place-items-center border-4 border-[#eef1ff] relative`}>
-                <Icon className="text-[#1428C8]" />
-                {count("baru") > 0 && <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full grid place-items-center">{count("baru")}</span>}
+            <button key={k} onClick={() => setTab(k)} className="relative w-16 -mt-[43px] flex flex-col items-center">
+              <div className={`${YELLOW} w-[58px] h-[58px] rounded-full grid place-items-center border-4 border-[#eef1ff] relative`}>
+                <Icon size={22} className="text-[#1428C8]" />
+                {count("baru") > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full grid place-items-center">{count("baru")}</span>
+                )}
               </div>
-              <span className={`text-[11px] mt-1 ${cur === k ? "text-[#EEFF5A] font-bold" : "text-white/70"}`}>{l}</span>
+              <span className={`text-[11px] mt-1.5 ${cur === k ? "text-[#EEFF5A] font-bold" : "text-white/70"}`}>{l}</span>
             </button>
           ) : (
-            <button key={k} onClick={() => setTab(k)} className={`flex flex-col items-center gap-1 text-[11px] ${cur === k ? "text-[#EEFF5A] font-bold" : "text-white/70"}`}>
+            <button key={k} onClick={() => setTab(k)} className={`w-16 flex flex-col items-center gap-1.5 text-[11px] ${cur === k ? "text-[#EEFF5A] font-bold" : "text-white/70"}`}>
               <Icon size={20} />{l}
             </button>
           )

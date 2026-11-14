@@ -58,7 +58,7 @@ export default function Laporan({ orders, saldo, wd, rek, onWithdraw, onOpen }) 
         <div className="bg-gradient-to-br from-[#1428C8] to-[#2F4BF2] text-white rounded-3xl shadow-[0_8px_24px_rgba(20,40,200,0.25)] p-5 md:p-6 flex flex-col justify-between gap-4">
           <div>
             <p className="text-xs font-semibold opacity-80">SALDO WARUNG</p>
-            <p className="text-3xl font-extrabold mt-1">{rp(saldo)}</p>
+            <p className="text-xl md:text-3xl font-extrabold mt-1">{rp(saldo)}</p>
             <p className="text-xs opacity-80 mt-1">Dapat ditarik ke rekening pribadi</p>
           </div>
           <button onClick={openWd} className="bg-[#EEFF5A] text-[#1428C8] font-extrabold py-3 rounded-full flex items-center justify-center gap-2">
@@ -67,11 +67,11 @@ export default function Laporan({ orders, saldo, wd, rek, onWithdraw, onOpen }) 
         </div>
         <Card>
           <p className="text-xs text-gray-400 font-semibold">OMZET HARI INI</p>
-          <p className="text-3xl font-extrabold text-[#1428C8] mt-1">{rp(days[6].v)}</p>
+          <p className="text-xl md:text-3xl font-extrabold text-[#1428C8] mt-1">{rp(days[6].v)}</p>
         </Card>
         <Card>
           <p className="text-xs text-gray-400 font-semibold">TOTAL 7 HARI</p>
-          <p className="text-3xl font-extrabold text-[#1428C8] mt-1">{rp(sum(selesai))}</p>
+          <p className="text-xl md:text-3xl font-extrabold text-[#1428C8] mt-1">{rp(sum(selesai))}</p>
         </Card>
       </div>
 
