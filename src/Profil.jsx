@@ -61,11 +61,7 @@ const infos = {
   tentang: ["Tentang KantinGO Penjual", "KantinGO membantu warung kantin kampus menerima pesanan online tanpa antre. Versi 1.0 (prototype)."],
 };
 
-export default function Profil({ selesai, setTab }) {
-  const [profile, setProfile] = useState({
-    name: "Kedai Kopi Kampus 2.0", username: "kedaikopikampus", email: "kedaikopi@kampus.ac.id", phone: "0812-3456-7890", location: "Kantin Pusat, Sayap Barat",
-  });
-  const [jam, setJam] = useState({ buka: "07:30", tutup: "19:00" });
+export default function Profil({ selesai, setTab, profile, setProfile, jam, setJam, openInfo }) {
   const [notif, setNotif] = useState(true);
   const [auto, setAuto] = useState(false);
   const [lang, setLang] = useState("Bahasa Indonesia");

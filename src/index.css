@@ -5,3 +5,7 @@ body {
   background: #eef1ff;
   margin: 0;
 }
+
+html {
+  overflow-y: scroll;
+}
